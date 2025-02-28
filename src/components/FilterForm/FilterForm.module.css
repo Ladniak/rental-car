@@ -1,0 +1,81 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 16px;
+  margin-bottom: 56px;
+}
+
+.title {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.33333;
+  color: #8d929a;
+  margin-bottom: 8px;
+}
+
+.inputsDiv {
+  border-radius: 20px;
+  background-color: #f6f6f6;
+  height: 44px;
+}
+
+.inputFrom {
+  border-radius: 12px 0 0 12px;
+  width: 160px;
+  height: 100%;
+  border: none;
+  background-color: #f6f6f6;
+  padding-left: 24px;
+  box-sizing: border-box;
+  outline: none;
+
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.25;
+  color: #101828;
+}
+
+.inputTo {
+  border-radius: 0 12px 12px 0;
+  width: 160px;
+  height: 100%;
+  border: none;
+  background-color: #f6f6f6;
+  padding-left: 24px;
+  box-sizing: border-box;
+  outline: none;
+
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.25;
+  color: #101828;
+
+  border-left: 1px solid #e0e0e0;
+}
+
+.inputFrom::placeholder {
+  color: #222;
+}
+
+.inputTo::placeholder {
+  color: #222;
+}
+
+.filterBtn {
+  border-radius: 12px;
+  padding: 12px 51px;
+  width: 156px;
+  height: 44px;
+  background: #3470ff;
+  transition: background 0.3s ease;
+
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.25;
+  color: #ffffff;
+}
+
+.filterBtn:hover {
+  background: #0b44cd;
+}
