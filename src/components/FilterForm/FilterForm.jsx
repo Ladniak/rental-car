@@ -1,25 +1,33 @@
 import Select from "react-select";
 
-import module from "./FilterForm.module.css"
+import module from "./FilterForm.module.css";
+
 import { customStylesBrand } from "../../utils/selectBrand.js";
 import { customStylesPrice } from "../../utils/selectPrice.js";
 
+import { selectFilter } from "../../redux/filters/selectors.js";
+import { fetchCars, fetchCarsBrand } from "../../redux/cars/operations.js";
 import { selectCarsBrand } from "../../redux/cars/selectors.js";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
-import { fetchCarsBrand } from "../../redux/cars/operations.js";
+import { setFilter } from "../../redux/filters/slice.js";
 
 const FilterForm = () => {
-    const dispath = useDispatch();
+    const dispatch = useDispatch();
     const brand = useSelector(selectCarsBrand);
+    const filter = useSelector(selectFilter);
 
     useEffect(() => {
-        dispath(fetchCarsBrand());
-    })
+        dispatch(fetchCarsBrand());
+    }, [dispatch])
+
+    useEffect(() => {
+        dispatch(fetchCars({}));
+    }, [dispatch]);
 
     const priceOptions = Array.from({ length: (150 - 30) / 10 + 1 }, (_, i) => {
-        const value = 30 + i * 10;
-        return { label: `${value}`, value };
+        const value = (30 + i * 10).toString();
+        return { label: value, value };
     });
 
     return (
@@ -31,6 +39,8 @@ const FilterForm = () => {
                         options={brand?.map((brand) => ({ label: brand, value: brand }))}
                         styles={customStylesBrand}
                         placeholder="Choose a brand"
+                        onChange={(e) => dispatch(setFilter({ brand: e.value }))}
+                        value={filter.brand ? { label: filter.brand, value: filter.brand } : null}
                     />
                 </div>
                 <div>
@@ -39,6 +49,8 @@ const FilterForm = () => {
                         options={priceOptions}
                         styles={customStylesPrice}
                         placeholder="Choose a price"
+                        onChange={(e) => dispatch(setFilter({ price: e.value }))}
+                        value={filter.price ? { label: filter.price.toString(), value: filter.price.toString() } : null}
                     />
                 </div>
                 <div>
@@ -56,7 +68,7 @@ const FilterForm = () => {
                         />
                     </div>
                 </div>
-                <button type="button" className={module.filterBtn} >
+                <button type="button" className={module.filterBtn} onClick={() => dispatch(fetchCars(filter))} >
                     Search
                 </button>
             </div>
