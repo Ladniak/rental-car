@@ -1,0 +1,115 @@
+.card {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+
+  width: 276px;
+  height: 424px;
+}
+
+.carImg {
+  border-radius: 14px;
+  width: 276px;
+  height: 268px;
+  object-fit: cover;
+
+  background: linear-gradient(
+    180deg,
+    rgba(18, 20, 23, 0.5) 0%,
+    rgba(18, 20, 23, 0.5) 100%
+  );
+  margin-bottom: 16px;
+}
+
+.info {
+  margin-bottom: 8px;
+}
+
+.header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-direction: row;
+
+  width: 276px;
+  height: 20px;
+}
+
+.modal {
+  color: #3470ff;
+}
+
+.title {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.25;
+  color: #101828;
+}
+
+.price {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.25;
+  color: #101828;
+}
+
+.additionalInfo {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 4px;
+
+  width: 276px;
+  height: 40px;
+
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.33333;
+  color: #8d929a;
+  margin-bottom: 28px;
+}
+
+.first {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: row;
+  gap: 6px;
+
+  height: 16px;
+}
+
+.second {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: row;
+  gap: 6px;
+  height: 16px;
+}
+
+.linkBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  gap: 0px;
+
+  border-radius: 12px;
+  padding: 12px 0;
+  width: 276px;
+  height: 44px;
+
+  background: #3470ff;
+  color: white;
+
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.linkBtn:hover {
+  background: #0b44cd;
+  border: 1px solid #000;
+}

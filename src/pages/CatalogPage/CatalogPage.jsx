@@ -1,6 +1,12 @@
+import CarList from "../../components/CarList/CarList"
+
+import module from "./CatalogPage.module.css"
+
 const CatalogPage = () => {
     return (
-        <div>CatalogPage</div>
+        <div className={module.container}>
+            <CarList />
+        </div>
     )
 }
 
