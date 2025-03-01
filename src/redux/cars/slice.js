@@ -1,9 +1,12 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { fetchCars, fetchCarById, fetchCarsBrand } from "./operations";
 
+const savedFavourites = JSON.parse(localStorage.getItem("favouriteCars")) || [];
+
 const INITIAL_STATE = {
   cars: [],
   carByID: [],
+  favouriteCars: savedFavourites,
   carBrands: [],
   loading: false,
   error: null,
@@ -12,6 +15,24 @@ const INITIAL_STATE = {
 const carsSlice = createSlice({
   name: "cars",
   initialState: INITIAL_STATE,
+  reducers: {
+    toggleFavourite: (state, action) => {
+      const car = action.payload;
+      const exists = state.favouriteCars.find((fav) => fav.id === car.id);
+
+      if (exists) {
+        state.favouriteCars = state.favouriteCars.filter(
+          (fav) => fav.id !== car.id
+        );
+      } else {
+        state.favouriteCars.push(car);
+      }
+      localStorage.setItem(
+        "favouriteCars",
+        JSON.stringify(state.favouriteCars)
+      );
+    },
+  },
   extraReducers: (builder) => {
     builder;
     builder
@@ -56,4 +77,5 @@ const carsSlice = createSlice({
   },
 });
 
+export const { toggleFavourite } = carsSlice.actions;
 export const carsReducer = carsSlice.reducer;

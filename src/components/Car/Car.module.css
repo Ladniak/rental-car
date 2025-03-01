@@ -8,6 +8,12 @@
   height: 424px;
 }
 
+.imgDiv {
+  display: flex;
+  position: relative;
+  margin-bottom: 16px;
+}
+
 .carImg {
   border-radius: 14px;
   width: 276px;
@@ -19,7 +25,18 @@
     rgba(18, 20, 23, 0.5) 0%,
     rgba(18, 20, 23, 0.5) 100%
   );
-  margin-bottom: 16px;
+}
+
+.favouriteBtn {
+  position: absolute;
+  top: 3%;
+  right: 3%;
+  background-color: inherit;
+}
+
+.icon {
+  width: 16px;
+  height: 16px;
 }
 
 .info {
