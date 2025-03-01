@@ -1,0 +1,10 @@
+.container {
+  display: flex;
+  height: 70vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.header {
+  color: #3470ff;
+}

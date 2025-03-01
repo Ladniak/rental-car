@@ -1,6 +1,10 @@
+import module from "./NotFoundPage.module.css"
+
 const NotFoundPage = () => {
     return (
-        <div>NotFoundPage</div>
+        <div className={module.container}>
+            <h1 className={module.header}>Sorry, this page does not exist!</h1>
+        </div>
     )
 }
 

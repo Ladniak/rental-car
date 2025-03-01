@@ -24,10 +24,6 @@ const CarPage = () => {
         dispatch(fetchCarById(id));
     }, [dispatch, id]);
 
-    if (!car) {
-        return <p>Loading cars...</p>;
-    }
-
     const address = car?.address ? car.address.split(", ") : [];
     const formatted = car?.mileage ? car.mileage.toLocaleString("ua-UA").replace(",", " ") : "N/A";
 
@@ -146,7 +142,6 @@ const CarPage = () => {
                         </div>
                     </div>
                 </div>
-
             </div>
         </>
     )
