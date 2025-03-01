@@ -7,8 +7,6 @@ A web application for renting cars, allowing users to browse available vehicles,
 - Browse a catalog of available cars
 - Filter and search for cars by model, price, and availability
 - Make a reservation for a selected car
-- Manage bookings and view rental history
-- User authentication and profile management
 
 ## Installation
 
@@ -31,10 +29,9 @@ A web application for renting cars, allowing users to browse available vehicles,
 
 ## Usage
 
-1. Open the application in your browser (usually at `http://localhost:3000`).
-2. Register or log in to your account.
-3. Browse available cars and use filters to find the best option.
-4. Make a reservation and manage your bookings in the profile section.
+1. Open the application in your browser (usually at `https://rental-car-wheat.vercel.app/`).
+2. Browse available cars and use filters to find the best option.
+3. Make a reservation.
 
 ## Author
 
