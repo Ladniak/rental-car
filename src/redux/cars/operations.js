@@ -9,7 +9,7 @@ export const fetchCars = createAsyncThunk(
     try {
       const params = {};
       if (filters.brand) params.brand = filters.brand;
-      if (filters.price) params.price = filters.price;
+      if (filters.rentalPrice) params.rentalPrice = filters.rentalPrice;
 
       const data = await axios.get("/cars", { params });
 

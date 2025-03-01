@@ -49,8 +49,8 @@ const FilterForm = () => {
                         options={priceOptions}
                         styles={customStylesPrice}
                         placeholder="Choose a price"
-                        onChange={(e) => dispatch(setFilter({ price: e.value }))}
-                        value={filter.price ? { label: filter.price.toString(), value: filter.price.toString() } : null}
+                        onChange={(e) => dispatch(setFilter({ rentalPrice: e.value }))}
+                        value={filter.rentalPrice ? { label: filter.rentalPrice.toString(), value: filter.rentalPrice.toString() } : null}
                     />
                 </div>
                 <div>

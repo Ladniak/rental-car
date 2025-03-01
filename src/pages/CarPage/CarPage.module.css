@@ -5,6 +5,13 @@
   gap: 72px;
 }
 
+.loaderWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60vh;
+}
+
 .carImg {
   border-radius: 19px;
   width: 640px;

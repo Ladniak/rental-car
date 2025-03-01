@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const INITIAL_STATE = {
   brand: "",
-  price: "",
+  rentalPrice: "",
 };
 
 const filterSlice = createSlice({
@@ -10,9 +10,9 @@ const filterSlice = createSlice({
   initialState: INITIAL_STATE,
   reducers: {
     setFilter: (state, action) => {
-      const { brand, price } = action.payload;
+      const { brand, rentalPrice } = action.payload;
       if (brand !== undefined) state.brand = brand;
-      if (price !== undefined) state.price = price;
+      if (rentalPrice !== undefined) state.rentalPrice = rentalPrice;
     },
   },
 });
