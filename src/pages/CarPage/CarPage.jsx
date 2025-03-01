@@ -49,7 +49,7 @@ const CarPage = () => {
                         <div className={module.paragraph}>
                             <p>
                                 <svg className={module.icon}>
-                                    <use href="../../../public/symbol-defs.svg#icon-map"></use>
+                                    <use href="/symbol-defs.svg#icon-map"></use>
                                 </svg>
                                 {address[1]}, {address[2]}
                             </p>
@@ -65,7 +65,7 @@ const CarPage = () => {
                                 <li className={module.item}>
                                     <span className={module.itemSpan}>
                                         <svg className={module.icon}>
-                                            <use href="../../../public/symbol-defs.svg#icon-check-circle"></use>
+                                            <use href="/symbol-defs.svg#icon-check-circle"></use>
                                         </svg>
                                     </span>
                                     Minimum age: {car.rentalConditions?.[0]?.match(/\d+/)?.[0] || "N/A"}
@@ -73,7 +73,7 @@ const CarPage = () => {
                                 <li className={module.item}>
                                     <span className={module.itemSpan}>
                                         <svg className={module.icon}>
-                                            <use href="../../../public/symbol-defs.svg#icon-check-circle"></use>
+                                            <use href="/symbol-defs.svg#icon-check-circle"></use>
                                         </svg>
                                     </span>
                                     {car.rentalConditions?.find(cond => cond.toLowerCase().includes("security deposit")) || "Security deposit required"}
@@ -81,7 +81,7 @@ const CarPage = () => {
                                 <li className={module.item}>
                                     <span className={module.itemSpan}>
                                         <svg className={module.icon}>
-                                            <use href="../../../public/symbol-defs.svg#icon-check-circle"></use>
+                                            <use href="/symbol-defs.svg#icon-check-circle"></use>
                                         </svg>
                                     </span>
                                     {car.rentalConditions?.find(cond => cond.toLowerCase().includes("valid driver")) || "Valid driver’s license"}
@@ -94,7 +94,7 @@ const CarPage = () => {
                                 <li className={module.item}>
                                     <span className={module.itemSpan}>
                                         <svg className={module.icon}>
-                                            <use href="../../../public/symbol-defs.svg#icon-calendar"></use>
+                                            <use href="/symbol-defs.svg#icon-calendar"></use>
                                         </svg>
                                     </span>
                                     Year: {car.year}
@@ -102,7 +102,7 @@ const CarPage = () => {
                                 <li className={module.item}>
                                     <span className={module.itemSpan}>
                                         <svg className={module.icon}>
-                                            <use href="../../../public/symbol-defs.svg#icon-car"></use>
+                                            <use href="/symbol-defs.svg#icon-car"></use>
                                         </svg>
                                     </span>
                                     Type: {car.type}
@@ -110,7 +110,7 @@ const CarPage = () => {
                                 <li className={module.item}>
                                     <span className={module.itemSpan}>
                                         <svg className={module.icon}>
-                                            <use href="../../../public/symbol-defs.svg#icon-fuel-pump"></use>
+                                            <use href="/symbol-defs.svg#icon-fuel-pump"></use>
                                         </svg>
                                     </span>
                                     Fuel Consumption: {car.fuelConsumption}
@@ -118,7 +118,7 @@ const CarPage = () => {
                                 <li className={module.item}>
                                     <span className={module.itemSpan}>
                                         <svg className={module.icon}>
-                                            <use href="../../../public/symbol-defs.svg#icon-Group3"></use>
+                                            <use href="/symbol-defs.svg#icon-Group3"></use>
                                         </svg>
                                     </span>
                                     Engine Size: {car.engineSize}
@@ -132,7 +132,7 @@ const CarPage = () => {
                                     <li key={index} className={module.item}>
                                         <span className={module.itemSpan}>
                                             <svg className={module.icon}>
-                                                <use href="../../../public/symbol-defs.svg#icon-check-circle"></use>
+                                                <use href="/symbol-defs.svg#icon-check-circle"></use>
                                             </svg>
                                         </span>
                                         {feature}
