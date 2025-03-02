@@ -20,8 +20,13 @@ const CarList = () => {
 
     return (
         <>
+            {cars.cars?.length === 0 && (
+                <div className={module.wrapper}>
+                    <h1 className={module.header}>There are no cars according to your request!</h1>
+                </div>
+            )}
             {loading && (
-                <div className={module.loaderWrapper}>
+                <div className={module.wrapper}>
                     <ScaleLoader color="#3498db" />
                 </div>
             )}

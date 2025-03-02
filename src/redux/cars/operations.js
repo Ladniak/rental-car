@@ -10,6 +10,8 @@ export const fetchCars = createAsyncThunk(
       const params = {};
       if (filters.brand) params.brand = filters.brand;
       if (filters.rentalPrice) params.rentalPrice = filters.rentalPrice;
+      if (filters.mileageFrom) params.minMileage = filters.mileageFrom;
+      if (filters.mileageTo) params.maxMileage = filters.mileageTo;
 
       const data = await axios.get("/cars", { params });
 
