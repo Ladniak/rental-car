@@ -18,11 +18,15 @@ A web application for renting cars, allowing users to browse available vehicles,
    ```sh
    cd rental-car
    ```
-3. Install dependencies:
+3. Navigate to the project directory:
+   ```sh
+   code .
+   ```
+4. Install dependencies:
    ```sh
    npm install
    ```
-4. Start the development server:
+5. Start the development server:
    ```sh
    npm start
    ```
