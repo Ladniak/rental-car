@@ -20,7 +20,7 @@ const CarList = () => {
 
     return (
         <>
-            {cars.cars?.length === 0 && (
+            {cars?.length === 0 && (
                 <div className={module.wrapper}>
                     <h1 className={module.header}>There are no cars according to your request!</h1>
                 </div>
@@ -31,7 +31,7 @@ const CarList = () => {
                 </div>
             )}
             <ul className={module.carList}>
-                {cars.cars?.map((car) => (
+                {cars?.map((car) => (
                     <li className={module.listItem} key={car.id}>
                         <Car id={car.id} />
                     </li>

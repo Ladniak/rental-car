@@ -1,16 +1,15 @@
 import Select from "react-select";
 
 import module from "./FilterForm.module.css";
-
 import { customStylesBrand } from "../../utils/selectBrand.js";
 import { customStylesPrice } from "../../utils/selectPrice.js";
 
-import { selectFilter, selectMileageFrom, selectMileageTo } from "../../redux/filters/selectors.js";
-import { fetchCars, fetchCarsBrand } from "../../redux/cars/operations.js";
-import { selectCarsBrand } from "../../redux/cars/selectors.js";
-import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { setFilter } from "../../redux/filters/slice.js";
+import { selectCarsBrand } from "../../redux/cars/selectors.js";
+import { fetchCars, fetchCarsBrand } from "../../redux/cars/operations.js";
+import { selectFilter, selectMileageFrom, selectMileageTo } from "../../redux/filters/selectors.js";
 
 const FilterForm = () => {
     const dispatch = useDispatch();
@@ -21,20 +20,15 @@ const FilterForm = () => {
 
     useEffect(() => {
         dispatch(fetchCarsBrand());
-    }, [dispatch])
-
-    useEffect(() => {
-        dispatch(fetchCars({}));
     }, [dispatch]);
 
     // functions for form
-
     const onBrandChange = (event) => {
-        dispatch(setFilter({ brand: event.value }))
+        dispatch(setFilter({ brand: event.value }));
     };
 
     const onPriceChange = (event) => {
-        dispatch(setFilter({ rentalPrice: event.value }))
+        dispatch(setFilter({ rentalPrice: event.value }));
     };
 
     const priceOptions = Array.from({ length: (150 - 30) / 10 + 1 }, (_, i) => {
@@ -54,6 +48,10 @@ const FilterForm = () => {
         if (/^\d*$/.test(value)) {
             dispatch(setFilter({ mileageTo: value }));
         }
+    };
+
+    const onSearchClick = () => {
+        dispatch(fetchCars({ filters: filter, page: 1 }));
     };
 
     return (
@@ -98,7 +96,7 @@ const FilterForm = () => {
                         />
                     </div>
                 </div>
-                <button type="button" className={module.filterBtn} onClick={() => dispatch(fetchCars(filter))} >
+                <button type="button" className={module.filterBtn} onClick={onSearchClick}>
                     Search
                 </button>
             </div>
@@ -106,4 +104,4 @@ const FilterForm = () => {
     );
 };
 
-export default FilterForm
+export default FilterForm;

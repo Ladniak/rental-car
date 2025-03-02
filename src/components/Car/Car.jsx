@@ -10,7 +10,7 @@ const Car = ({ id }) => {
     const cars = useSelector(selectCars);
     const favourites = useSelector(selectFavouriteCars);
 
-    const car = cars.cars.find(car => car.id === id);
+    const car = cars.find(car => car.id === id);
     const address = car.address.split(", ");
     const urlState = "/";
 

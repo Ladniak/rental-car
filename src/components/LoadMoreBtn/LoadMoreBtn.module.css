@@ -23,3 +23,10 @@
 .button:hover {
   border: 1px solid #0b44cd;
 }
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 20vh;
+}

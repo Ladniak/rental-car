@@ -33,6 +33,11 @@ const carsSlice = createSlice({
         JSON.stringify(state.favouriteCars)
       );
     },
+    nextPage: (state) => {
+      if (state.page < state.totalPages) {
+        state.page += 1;
+      }
+    },
   },
   extraReducers: (builder) => {
     builder
@@ -42,8 +47,17 @@ const carsSlice = createSlice({
       .addCase(fetchCars.fulfilled, (state, action) => {
         state.loading = false;
         state.error = null;
-        state.cars = action.payload;
+
+        if (action.payload.page === 1) {
+          state.cars = action.payload.cars;
+        } else {
+          state.cars = [...state.cars, ...action.payload.cars];
+        }
+
+        state.totalPages = action.payload.totalPages;
+        state.page = action.payload.page;
       })
+
       .addCase(fetchCars.rejected, (state, action) => {
         state.loading = false;
         state.error = action.payload;
@@ -77,5 +91,5 @@ const carsSlice = createSlice({
   },
 });
 
-export const { toggleFavourite } = carsSlice.actions;
+export const { toggleFavourite, nextPage } = carsSlice.actions;
 export const carsReducer = carsSlice.reducer;
