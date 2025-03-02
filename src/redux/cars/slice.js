@@ -8,6 +8,7 @@ const INITIAL_STATE = {
   carByID: [],
   favouriteCars: savedFavourites,
   carBrands: [],
+  page: 1,
   loading: false,
   error: null,
 };

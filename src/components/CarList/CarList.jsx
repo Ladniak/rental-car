@@ -15,7 +15,7 @@ const CarList = () => {
     const loading = useSelector(Loading);
 
     useEffect(() => {
-        dispatch(fetchCars({}));
+        dispatch(fetchCars());
     }, [dispatch])
 
     return (
