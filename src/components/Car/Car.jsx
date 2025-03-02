@@ -16,6 +16,8 @@ const Car = ({ id }) => {
 
     const isFavourite = favourites.some(fav => fav.id === car.id);
 
+    const formatted = car?.mileage ? car.mileage.toLocaleString("ua-UA").replace(",", " ") : "N/A";
+
     const handleFavouriteClick = () => {
         dispatch(toggleFavourite(car));
     };
@@ -45,7 +47,7 @@ const Car = ({ id }) => {
             </div>
             <div className={module.additionalInfo}>
                 <p className={module.first}>{address[1]} | {address[2]} | {car.rentalCompany}</p>
-                <p className={module.second}>{car.type} | {car.mileage}</p>
+                <p className={module.second}>{car.type} | {formatted} km</p>
             </div>
             <Link className={module.linkBtn} state={{ from: urlState }} to={`/catalog/${car.id}`}>
                 Read more

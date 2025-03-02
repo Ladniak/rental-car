@@ -122,11 +122,10 @@
   background: #3470ff;
   color: white;
 
-  transition: 0.3s;
+  transition: 0.5s;
   cursor: pointer;
 }
 
 .linkBtn:hover {
   background: #0b44cd;
-  border: 1px solid #000;
 }
