@@ -28,7 +28,7 @@ A web application for renting cars, allowing users to browse available vehicles,
    ```
 5. Start the development server:
    ```sh
-   npm start
+   npm run dev
    ```
 
 ## Usage
